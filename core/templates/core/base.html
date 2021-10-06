@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Project CSS -->
+    {% comment %} <link rel="stylesheet" href="{% static 'css/home.css' %}"> {% endcomment %}
+
+  </head>
+  <body>
+    <div class="main">
+      
+      {% comment %} {% block sidebar %} {% endblock sidebar %} {% endcomment %}
+        
+      <section>
+        {% include 'core/navbar.html' %}
+        {% include 'core/home.html' %}
+      </section>
+      
+
+      <div class='container'>
+        {% block canva %} {% endblock canva %}
+      </div>
+      {% include 'core/js.html' %}
+      
+      <script>
+        $(document).ready(function(){
+          {% block jquery %}{% endblock %}
+        })
+      </script>
+          
+      {% include 'core/table.html' %}
+      {% comment %} {% include 'core/footer.html' %}  {% endcomment %}
+    </div>
+
+  </body>
+</html>

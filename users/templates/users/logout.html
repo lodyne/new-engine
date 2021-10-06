@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %} 
+{% block content %}
+
+<div class="alert alert-info text-center">
+	<h4>You have successfully logged out!</h4>
+	<a class="ml-2" href="{% url 'login' %}">Login Again</a>
+</div>
+
+{% comment %} 
+{% for message in messages %}
+    <h4 {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h4>
+{% endfor %} {% endcomment %}
+
+{% endblock content %}
