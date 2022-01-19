@@ -9,6 +9,7 @@ from .models import Post
 from .serializers import PostSerializer
 
 
+
 class HomeView(LoginRequiredMixin,TemplateView):
     template_name = "core/dashboard.html"
 
